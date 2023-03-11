@@ -3,7 +3,7 @@ function init(){
     var botao = document.getElementById("botaoAdicionar");
     botao.onclick = cliqueBotao;
 }
-///teste
+
 
 function cliqueBotao (){
     var textoInput =  document.getElementById("textoNomeMusica");
