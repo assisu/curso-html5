@@ -5,7 +5,7 @@ function salvar(item){
 }
 
 function carregar(){
-    var arrayListaDeMusica = buscaMusicaSalva();
+    var arrayListaDeMusica = pegarMusicaSalva();
     var ul = document.getElementById("listaDeMusica");
     if(arrayListaDeMusica != null) {
         for(var i; i < arrayListaDeMusica.length; i++){
