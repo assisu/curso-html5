@@ -1,32 +1,38 @@
-function salvar(item){
-    var arrayListaDeMusica = getStorearray("listaDeMusica");
-    arrayListaDeMusica.push(item);
-    localStorage.setItem("listaDeMusica", JSON.stringify(arrayListaDeMusica));
+/* playlist_store.js
+ * 
+ * Ready-bake code to store and retrieve playlist items
+ */
+
+function save(item) {
+	var playlistArray = getStoreArray("playlist");
+	playlistArray.push(item);
+	localStorage.setItem("playlist", JSON.stringify(playlistArray));
 }
 
-function carregar(){
-    var arrayListaDeMusica = pegarMusicaSalva();
-    var ul = document.getElementById("listaDeMusica");
-    if(arrayListaDeMusica != null) {
-        for(var i; i < arrayListaDeMusica.length; i++){
-            var li = document.createElement("li");
-            li.innerHTML = arrayListaDeMusica[i];
-            ul.appendChild(li);
-        }
-    }
+function loadPlaylist() {
+	var playlistArray = getSavedSongs();
+	var ul = document.getElementById("playlist");
+	if (playlistArray != null) {
+		for (var i = 0; i < playlistArray.length; i++) {
+			var li = document.createElement("li");
+			li.innerHTML = playlistArray[i];
+			ul.appendChild(li);
+		}
+	}
 }
 
-function pegarMusicaSalva(){
-    return getStorearray("listaDeMusica");
+function getSavedSongs() {
+	return getStoreArray("playlist");
 }
 
-function pegarLista(chave){
-    var arrayListaDeMusica = localStorage.getItem(chave);
-    if (arrayListaDeMusica == null || arrayListaDeMusica ==""){
-        arrayListaDeMusica = new Array();
-    }
-    else {
-        arrayListaDeMusica = JSON.parse(arrayListaDeMusica);
-    }
-    return arrayListaDeMusica;
+function getStoreArray(key) {
+	var playlistArray = localStorage.getItem(key);
+	if (playlistArray == null || playlistArray == "") {
+		playlistArray = new Array();
+	}
+	else {
+		playlistArray = JSON.parse(playlistArray);
+	}
+	return playlistArray;
 }
+
