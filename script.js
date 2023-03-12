@@ -2,6 +2,7 @@ window.onload = init;
 function init(){
     var botao = document.getElementById("botaoAdicionar");
     botao.onclick = cliqueBotao;
+    carregar();
 }
 function cliqueBotao (){
     var textoInput =  document.getElementById("textoNomeMusica");
@@ -14,7 +15,7 @@ function cliqueBotao (){
         var ul = document.getElementById("listaDeMusica");
         ul.appendChild(li);
         li.innerHTML = nomeMusica;
-        alert("Adicionando " + nomeMusica);
+        salvar(nomeMusica);
     }
     
 }
