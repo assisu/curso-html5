@@ -5,4 +5,4 @@ function adicionaUm (numero){
 var maisUm  = adicionaUm;
 
 var resultado = adicionaUm(1);
-alert (resultado);
+alert ("O resultado é:" + resultado); 
