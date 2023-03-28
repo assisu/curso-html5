@@ -9,3 +9,7 @@ window.onload = function(){
     };
     requisicao.send(null)
 }
+function atulizaVendas (responseText){
+    var vendasDiv = document.getElementById("vendas");
+    vendasDiv.innerHTML = responseText;
+}
