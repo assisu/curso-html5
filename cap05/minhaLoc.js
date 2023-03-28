@@ -111,3 +111,7 @@ function adiconaMarcador (mapa, latlong, titulo, conteudo){
         }
     )
 }
+
+function atualizaVendas(responseText){
+    var sa
+}
