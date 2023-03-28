@@ -16,7 +16,7 @@ function atulizaVendas (responseText){
         var venda = vendas[i];
         var div = document.createElement("div");
         div.setAttribute("class", "vendaItem");
-        div.innerHTML = venda.name + " vendeu " + venda.sales + " chicletes";
+        div.innerHTML = venda.name + " vendeu  " + venda.sales + " chicletes";
         vendasDiv.appendChild(div);
     }
 }
